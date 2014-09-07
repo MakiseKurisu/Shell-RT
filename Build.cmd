@@ -23,6 +23,7 @@ if "%filename%" == "" (
 if ERRORLEVEL 1 goto CleanUp
 
 dumpbin /nologo /rawdata:1,128 /out:%filename%.txt %filename%.obj
+link /subsystem:windows %filename%.obj
 del	%filename%.obj
 
 :CleanUp
