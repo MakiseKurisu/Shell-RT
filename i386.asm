@@ -1,6 +1,7 @@
 		.386
 		.model flat, stdcall
 		.code
+;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Address	macro	Register,Tag
 		call	@F
 @@:		pop	Register
