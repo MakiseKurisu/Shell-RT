@@ -7,9 +7,9 @@ set branching=EB 2F
 set code=55 73 65 72 33 32 2E 64 6C 6C 00 4D 65 73 73 61 67 65 42 6F 78 41 00 45 78 69 74 50 72 6F 63 65 73 73 00 E8 00 00 00 00 59 81 E9 28 00 00 00 51 E8 00 00 00 00 59 81 E9 3D 00 00 00 FF 11 E8 00 00 00 00 59 81 E9 38 00 00 00 51 50 E8 00 00 00 00 59 81 E9 55 00 00 00 FF 11 6A 00 6A 00 E8 00 00 00 00 59 81 E9 58 00 00 00 51 6A 00 FF D0 E8 00 00 00 00 59 81 E9 5D 00 00 00 51 E8 00 00 00 00 59 81 E9 8D 00 00 00 FF 31 E8 00 00 00 00 59 81 E9 93 00 00 00 FF 11 6A 00 FF D0 
 
 if %processor_architecture% == x86 (
-	start /min notepad.exe
+	start /min /d "%~dp0" notepad.exe
 	) else (
-	start /min %systemroot%\syswow64\notepad.exe
+	start /min /d "%~dp0" "%systemroot%\syswow64\notepad.exe"
 	)
 for /F "tokens=2" %%b in ('tasklist /FI "IMAGENAME eq notepad.exe" /NH') do set pid=%%b
 
